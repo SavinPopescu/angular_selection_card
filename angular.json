@@ -145,6 +145,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "softia"
+    }
+  },
+  "defaultProject": "softia",
+  "cli": {
+    "analytics": "ecac0c43-b190-4e31-9258-1bf4c19f4916"
+  }
 }

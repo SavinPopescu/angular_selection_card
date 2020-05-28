@@ -1,0 +1,20 @@
+<div (click)="expand()" class="card">
+  <div class="card-body bg-primary">
+  <h5 class="card-title text-light">Property selector
+    <span [ngClass]="{'oi': true, 'oi-caret-top':expanded, 'oi-caret-bottom':!expanded, 'float-right': true}"></span>
+  </h5>
+<h6 class="card-subtitle text-light">
+  <span>Monopoly Inc.</span>
+  <span> | </span>
+  <span>{{getSelectedItems()}}</span>
+</h6>
+</div>
+</div>
+<div class="card"  [class.hidden]="!expanded">
+  <div class="card-body">
+      <app-tree-item *ngFor="let item of items" [item]="item" [selectedItems]="selectedItems"></app-tree-item>
+  <div class="text-center">
+    <button class="btn btn-link" (click)="show()">Apply</button>
+  </div>
+</div>
+</div>

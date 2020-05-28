@@ -1,0 +1,17 @@
+<div *ngIf="hasChildren(item)" class="parent_item">
+  <label class="parent_label">
+    {{item.value}}
+    <input type="checkbox" [checked]="item.selected" (change)="check(item, $event.target.checked)">
+  </label>
+  <div class="children_container">
+    <app-tree-item *ngFor="let item of item.children" [item]="item" [selectedItems]="selectedItems"
+      (selectionChanged)="onSelectionChanged()"></app-tree-item>
+  </div>
+</div>
+
+<div *ngIf="!hasChildren(item)">
+  <label>
+    {{item.value}}
+    <input type="checkbox" [checked]="item.selected" (change)="check(item, $event.target.checked)">
+  </label>
+</div>
